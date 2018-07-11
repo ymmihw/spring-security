@@ -1,4 +1,4 @@
-package com.ymmihw.spring.security;
+package com.ymmihw.spring.security.simple;
 
 import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;

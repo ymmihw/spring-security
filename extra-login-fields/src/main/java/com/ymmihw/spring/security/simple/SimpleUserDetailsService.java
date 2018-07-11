@@ -1,6 +1,5 @@
-package com.ymmihw.spring.security;
+package com.ymmihw.spring.security.simple;
 
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -17,8 +16,7 @@ public class SimpleUserDetailsService implements UserDetailsService {
 
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-    String[] usernameAndDomain =
-        StringUtils.split(username, String.valueOf(Character.LINE_SEPARATOR));
+    String[] usernameAndDomain = username.split(" ");
     if (usernameAndDomain == null || usernameAndDomain.length != 2) {
       throw new UsernameNotFoundException("Username and domain must be provided");
     }

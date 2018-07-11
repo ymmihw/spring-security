@@ -1,4 +1,4 @@
-package com.ymmihw.spring.security;
+package com.ymmihw.spring.security.simple;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -41,8 +41,7 @@ public class SimpleAuthenticationFilter extends UsernamePasswordAuthenticationFi
       domain = "";
     }
 
-    String usernameDomain =
-        String.format("%s%s%s", username.trim(), String.valueOf(Character.LINE_SEPARATOR), domain);
+    String usernameDomain = String.format("%s%s%s", username.trim(), " ", domain);
     return new UsernamePasswordAuthenticationToken(usernameDomain, password);
   }
 

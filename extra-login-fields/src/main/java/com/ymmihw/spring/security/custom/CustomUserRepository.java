@@ -1,4 +1,4 @@
-package com.ymmihw.spring.security;
+package com.ymmihw.spring.security.custom;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -7,7 +7,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Repository;
 
 @Repository("userRepository")
-public class SimpleUserRepository implements UserRepository {
+public class CustomUserRepository implements UserRepository {
 
   @Override
   public User findUser(String username, String domain) {

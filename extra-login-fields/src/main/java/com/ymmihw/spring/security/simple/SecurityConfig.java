@@ -1,4 +1,4 @@
-package com.ymmihw.spring.security;
+package com.ymmihw.spring.security.simple;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
