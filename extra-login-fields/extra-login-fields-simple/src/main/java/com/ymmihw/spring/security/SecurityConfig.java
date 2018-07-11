@@ -22,12 +22,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   private UserDetailsService userDetailsService;
 
   @Override
-  protected void configure(HttpSecurity http) throws Exception {
-
+  protected void configure(HttpSecurity http) throws Exception { // @formatter:off
     http.addFilterBefore(authenticationFilter(), UsernamePasswordAuthenticationFilter.class)
-        .authorizeRequests().antMatchers("/css/**", "/index").permitAll().antMatchers("/user/**")
-        .authenticated().and().formLogin().loginPage("/login").and().logout().logoutUrl("/logout");
-  }
+        .authorizeRequests()
+          .antMatchers("/css/**", "/index").permitAll()
+          .antMatchers("/user/**").authenticated()
+          .and()
+        .formLogin().loginPage("/login").and()
+        .logout().logoutUrl("/logout");
+  } // @formatter:on
 
   public SimpleAuthenticationFilter authenticationFilter() throws Exception {
     SimpleAuthenticationFilter filter = new SimpleAuthenticationFilter();
