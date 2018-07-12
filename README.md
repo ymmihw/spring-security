@@ -12,3 +12,4 @@ extra-login-fields | [Extra Login Fields with Spring Security](http://www.baeldu
 Module | Article
 --|--
 remember-me | [Spring Security Remember Me](http://www.baeldung.com/spring-security-remember-me)
+persistent-remember-me | [Spring Security – Persistent Remember Me](http://www.baeldung.com/spring-security-persistent-remember-me)
