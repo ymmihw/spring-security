@@ -7,3 +7,8 @@ new-password-storage | [New Password Storage In Spring Security 5](http://www.ba
 custom-security-configurer | [A Custom Spring SecurityConfigurer](http://www.baeldung.com/spring-security-custom-configurer)
 custom-authentication-provider | [Spring Security Authentication Provider](http://www.baeldung.com/spring-security-authentication-provider)
 extra-login-fields | [Extra Login Fields with Spring Security](http://www.baeldung.com/spring-security-extra-login-fields)
+
+#### Authentication Series
+Module | Article
+--|--
+remember-me | [Spring Security Remember Me](http://www.baeldung.com/spring-security-remember-me)
