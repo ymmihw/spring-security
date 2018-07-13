@@ -18,8 +18,4 @@
  </properties>
  <dependencies>
  </dependencies>
- <modules>
-  <module>remember-me</module>
-  <module>persistent-remember-me</module>
- </modules>
 </project>
