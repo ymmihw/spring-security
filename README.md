@@ -20,9 +20,14 @@ channel-security-https | [Spring HTTP/HTTPS Channel Security](http://www.baeldun
 
 ---
 
-### spring-security-ldap
+### Spring Security LDAP
 Module | Article
 --|--
 spring-security-ldap-intro | [Intro to Spring Security LDAP](https://www.baeldung.com/spring-security-ldap)
 
 ---
+
+### Spring Security Web
+Module | Article
+--|--
+spring-security-web-csrf | [A Guide to CSRF Protection in Spring Security](http://www.baeldung.com/spring-security-csrf)
