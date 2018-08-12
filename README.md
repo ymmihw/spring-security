@@ -19,3 +19,10 @@ redirect-different-after-login | [Redirect to different pages after Login with S
 channel-security-https | [Spring HTTP/HTTPS Channel Security](http://www.baeldung.com/spring-channel-security-https)
 
 ---
+
+### spring-security-ldap
+Module | Article
+--|--
+spring-security-ldap-intro | [Intro to Spring Security LDAP](https://www.baeldung.com/spring-security-ldap)
+
+---
