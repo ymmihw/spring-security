@@ -1,4 +1,4 @@
-### Relevant Articles: 
+## Relevant Articles: 
 
 Module | Article
 --|--
@@ -8,10 +8,14 @@ custom-security-configurer | [A Custom Spring SecurityConfigurer](http://www.bae
 custom-authentication-provider | [Spring Security Authentication Provider](http://www.baeldung.com/spring-security-authentication-provider)
 extra-login-fields | [Extra Login Fields with Spring Security](http://www.baeldung.com/spring-security-extra-login-fields)
 
-#### Authentication Series
+---
+
+### Authentication Series
 Module | Article
 --|--
 remember-me | [Spring Security Remember Me](http://www.baeldung.com/spring-security-remember-me)
 persistent-remember-me | [Spring Security – Persistent Remember Me](http://www.baeldung.com/spring-security-persistent-remember-me)
 redirect-different-after-login | [Redirect to different pages after Login with Spring Security](http://www.baeldung.com/spring_redirect_after_login)
 channel-security-https | [Spring HTTP/HTTPS Channel Security](http://www.baeldung.com/spring-channel-security-https)
+
+---
