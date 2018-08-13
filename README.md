@@ -2,7 +2,6 @@
 
 Module | Article
 --|--
-security-basic-auth | [Spring Security Basic Authentication](http://www.baeldung.com/spring-security-basic-authentication)
 new-password-storage | [New Password Storage In Spring Security 5](http://www.baeldung.com/spring-security-5-password-storage)
 custom-security-configurer | [A Custom Spring SecurityConfigurer](http://www.baeldung.com/spring-security-custom-configurer)
 custom-authentication-provider | [Spring Security Authentication Provider](http://www.baeldung.com/spring-security-authentication-provider)
@@ -30,6 +29,9 @@ spring-security-ldap-intro | [Intro to Spring Security LDAP](https://www.baeldun
 ### Spring Security Web
 Module | Article
 --|--
+security-basic-auth | [Spring Security Basic Authentication](http://www.baeldung.com/spring-security-basic-authentication)
+spring-security-web-digest-auth | [Spring Security Digest Authentication](http://www.baeldung.com/spring-security-digest-authentication)
+spring-security-web-x509-auth | [X.509 Authentication in Spring Security](http://www.baeldung.com/x-509-authentication-in-spring-security)
 spring-security-web-csrf | [A Guide to CSRF Protection in Spring Security](http://www.baeldung.com/spring-security-csrf)
 
 ---
