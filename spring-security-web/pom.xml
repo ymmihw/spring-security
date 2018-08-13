@@ -18,7 +18,4 @@
  </properties>
  <dependencies>
  </dependencies>
- <modules>
-  <module>spring-security-web-csrf</module>
- </modules>
 </project>
