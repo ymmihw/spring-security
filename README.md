@@ -30,6 +30,7 @@ spring-security-ldap-intro | [Intro to Spring Security LDAP](https://www.baeldun
 Module | Article
 --|--
 security-basic-auth | [Spring Security Basic Authentication](http://www.baeldung.com/spring-security-basic-authentication)
+spring-security-web-digest-auth | [Spring Security Digest Authentication](http://www.baeldung.com/spring-security-digest-authentication)
 spring-security-web-csrf | [A Guide to CSRF Protection in Spring Security](http://www.baeldung.com/spring-security-csrf)
 
 ### Spring Security OAuth2
