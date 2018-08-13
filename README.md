@@ -32,7 +32,16 @@ Module | Article
 --|--
 spring-security-web-csrf | [A Guide to CSRF Protection in Spring Security](http://www.baeldung.com/spring-security-csrf)
 
+---
+
 ### Spring Security OAuth2
 Module | Article
 --|--
 spring-security-oauth2-sso | [Simple Single Sign On with Spring Security OAuth2](http://www.baeldung.com/sso-spring-security-oauth2)
+
+---
+
+### Spring Security Crypto
+Module | Article
+--|--
+new-password-storage | [New Password Storage In Spring Security 5](http://www.baeldung.com/spring-security-5-password-storage)
