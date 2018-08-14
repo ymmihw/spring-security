@@ -40,6 +40,7 @@ spring-security-web-csrf | [A Guide to CSRF Protection in Spring Security](http:
 Module | Article
 --|--
 spring-security-oauth2-sso | [Simple Single Sign On with Spring Security OAuth2](http://www.baeldung.com/sso-spring-security-oauth2)
+spring-security-oauth2-principal-authorities-extractor | [Extracting Principal and Authorities using Spring Security OAuth](https://www.baeldung.com/spring-security-oauth-principal-authorities-extractor)
 
 ---
 
