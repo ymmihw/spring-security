@@ -3,6 +3,8 @@ package com.ymmihw.spring.security.oauth2.sso.auth.server;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
@@ -22,7 +24,8 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
 
   @Override
   public void configure(final ClientDetailsServiceConfigurer clients) throws Exception {
-    clients.inMemory().withClient("SampleClientId").secret("secret")
+    PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+    clients.inMemory().withClient("SampleClientId").secret(encoder.encode("secret"))
         .authorizedGrantTypes("authorization_code").scopes("user_info").autoApprove(true);
   }
 
