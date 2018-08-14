@@ -18,10 +18,13 @@ import com.ymmihw.spring.security.auth2.extractor.github.GithubPrincipalExtracto
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
   @Override
-  protected void configure(HttpSecurity http) throws Exception {
-    http.antMatcher("/**").authorizeRequests().antMatchers("/login**").permitAll().anyRequest()
-        .authenticated().and().formLogin().disable();
-  }
+  protected void configure(HttpSecurity http) throws Exception { // @formatter:off
+    http.antMatcher("/**")
+          .authorizeRequests()
+            .antMatchers("/login**").permitAll()
+            .anyRequest().authenticated()
+        .and().formLogin().disable();
+  }// @formatter:on
 
   @Bean
   @Profile("oauth2-extractors-baeldung")
