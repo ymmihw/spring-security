@@ -42,7 +42,7 @@ Module | Article
 --|--
 spring-security-oauth2-sso | [Simple Single Sign On with Spring Security OAuth2](http://www.baeldung.com/sso-spring-security-oauth2)
 spring-security-oauth2-principal-authorities-extractor | [Extracting Principal and Authorities using Spring Security OAuth](https://www.baeldung.com/spring-security-oauth-principal-authorities-extractor)
-
+spring-security-oauth2-authorization-code-flow | [Front-End App with Spring Security OAuth – Authorization Code Flow](https://www.baeldung.com/spring-security-oauth-authorization-code-flow)
 ---
 
 ### Spring Security Crypto
