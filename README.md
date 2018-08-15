@@ -31,7 +31,7 @@ extra-login-fields | [Extra Login Fields with Spring Security](http://www.baeldu
 spring-security-web-digest-auth | [Spring Security Digest Authentication](http://www.baeldung.com/spring-security-digest-authentication)
 spring-security-web-x509-auth | [X.509 Authentication in Spring Security](http://www.baeldung.com/x-509-authentication-in-spring-security)
 spring-security-web-csrf | [A Guide to CSRF Protection in Spring Security](http://www.baeldung.com/spring-security-csrf)
-spring-security-web-custom-authentication-failure-handler | [Extracting Principal and Authorities using Spring Security OAuth](https://www.baeldung.com/spring-security-oauth-principal-authorities-extractor)
+spring-security-web-custom-authentication-failure-handler | [Spring Security Custom AuthenticationFailureHandler](https://www.baeldung.com/spring-security-custom-authentication-failure-handler)
 ---
 
 ### Spring Security OAuth2
