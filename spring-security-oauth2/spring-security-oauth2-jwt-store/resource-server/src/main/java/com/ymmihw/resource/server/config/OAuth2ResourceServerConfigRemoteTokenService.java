@@ -1,6 +1,7 @@
 package com.ymmihw.resource.server.config;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -52,7 +53,7 @@ public class OAuth2ResourceServerConfigRemoteTokenService extends ResourceServer
     Resource resource = new ClassPathResource("public.txt");
     String publicKey = null;
     try {
-      publicKey = IOUtils.toString(resource.getInputStream());
+      publicKey = IOUtils.toString(resource.getInputStream(), Charset.defaultCharset());
     } catch (final IOException e) {
       throw new RuntimeException(e);
     }
