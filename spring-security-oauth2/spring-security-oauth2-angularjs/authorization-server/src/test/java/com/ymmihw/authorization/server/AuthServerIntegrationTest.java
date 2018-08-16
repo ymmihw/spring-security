@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = AuthorizationServer.class, webEnvironment = WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = ImplicitAuthorizationServer.class, webEnvironment = WebEnvironment.RANDOM_PORT)
 public class AuthServerIntegrationTest {
 
     @Test
