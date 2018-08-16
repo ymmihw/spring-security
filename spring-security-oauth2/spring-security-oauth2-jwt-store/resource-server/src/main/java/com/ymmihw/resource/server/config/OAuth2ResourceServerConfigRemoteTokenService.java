@@ -1,9 +1,13 @@
 package com.ymmihw.resource.server.config;
 
+import java.io.IOException;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -34,10 +38,25 @@ public class OAuth2ResourceServerConfigRemoteTokenService extends ResourceServer
   private CustomAccessTokenConverter customAccessTokenConverter;
 
   @Bean
-  public JwtAccessTokenConverter accessTokenConverter() {
+  public JwtAccessTokenConverter symmetryAccessTokenConverter() {
     JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
     converter.setAccessTokenConverter(customAccessTokenConverter);
     converter.setSigningKey("123");
+    return converter;
+  }
+
+  @Bean
+  @Primary
+  public JwtAccessTokenConverter accessTokenConverter() {
+    JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
+    Resource resource = new ClassPathResource("public.txt");
+    String publicKey = null;
+    try {
+      publicKey = IOUtils.toString(resource.getInputStream());
+    } catch (final IOException e) {
+      throw new RuntimeException(e);
+    }
+    converter.setVerifierKey(publicKey);
     return converter;
   }
 
