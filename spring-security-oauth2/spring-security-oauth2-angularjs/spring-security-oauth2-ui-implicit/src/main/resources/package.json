@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 8089",
+    "start": "ng serve --port 8086",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -26,6 +26,7 @@
     "ng2-cookies": ">=1.0.12",
     "rxjs": "^6.1.0",
     "rxjs-compat": "^6.0.0-tactical-rc.1",
+    "url-parse": "^1.4.3",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {

@@ -19,12 +19,14 @@ export class AppService {
 
   constructor(
     private _router: Router, private _http: Http, private oauthService: OAuthService) {
-    this.oauthService.loginUrl = 'http://localhost:8081/spring-security-oauth-server/oauth/authorize';
-    this.oauthService.redirectUri = 'http://localhost:8086/';
-    this.oauthService.clientId = "sampleClientId";
-    this.oauthService.scope = "read write foo";
+    this.oauthService.configure({
+      loginUrl: 'http://localhost:8081/spring-security-oauth-server/oauth/authorize',
+      redirectUri: 'http://localhost:8086/',
+      clientId: "fooClientId",
+      scope:"read write foo",
+      oidc:false,
+    }); 
     this.oauthService.setStorage(sessionStorage);
-    this.oauthService.oidc = false;
     this.oauthService.tryLogin({});
   }
 

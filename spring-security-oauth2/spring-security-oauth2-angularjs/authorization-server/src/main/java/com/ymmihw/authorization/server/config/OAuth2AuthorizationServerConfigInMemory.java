@@ -21,9 +21,9 @@ public class OAuth2AuthorizationServerConfigInMemory extends AuthorizationServer
   @Override
   public void configure(final ClientDetailsServiceConfigurer clients) throws Exception {
     PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+
     clients.inMemory().withClient("fooClientId").secret(encoder.encode("secret"))
-        .authorizedGrantTypes("authorization_code").scopes("foo", "read", "write")
-        .redirectUris("http://localhost:8089/");
+        .authorizedGrantTypes("implicit").scopes("read", "write", "foo").autoApprove(true);
   }
 
 }
