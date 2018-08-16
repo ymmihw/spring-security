@@ -56,3 +56,4 @@ new-password-storage | [New Password Storage In Spring Security 5](http://www.ba
 Module | Article
 --|--
 custom-security-configurer | [A Custom Spring SecurityConfigurer](http://www.baeldung.com/spring-security-custom-configurer)
+spring-security-method-security | [Introduction to Spring Method Security](https://www.baeldung.com/spring-security-method-security)
