@@ -37,7 +37,6 @@ public class PasswordOAuth2AuthorizationServer extends AuthorizationServerConfig
   @Qualifier("authenticationManagerBean")
   private AuthenticationManager authenticationManager;
 
-
   @Override
   public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
     TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
