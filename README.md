@@ -41,6 +41,7 @@ spring-security-oauth2-sso | [Simple Single Sign On with Spring Security OAuth2]
 spring-security-oauth2-principal-authorities-extractor | [Extracting Principal and Authorities using Spring Security OAuth](https://www.baeldung.com/spring-security-oauth-principal-authorities-extractor)
 spring-security-oauth2-angularjs | [Spring REST API + OAuth2 + AngularJS](http://www.baeldung.com/rest-api-spring-oauth2-angularjs)
 spring-security-oauth2-angularjs | [Angular 4 Upgrade for Spring Security OAuth](http://www.baeldung.com/angular-4-upgrade-for-spring-security-oauth/)
+spring-security-oauth2-jwt-store | [Using JWT with Spring Security OAuth](http://www.baeldung.com/spring-security-oauth-jwt)
 spring-security-oauth2-authorization-code-flow | [Front-End App with Spring Security OAuth – Authorization Code Flow](https://www.baeldung.com/spring-security-oauth-authorization-code-flow)
 ---
 
