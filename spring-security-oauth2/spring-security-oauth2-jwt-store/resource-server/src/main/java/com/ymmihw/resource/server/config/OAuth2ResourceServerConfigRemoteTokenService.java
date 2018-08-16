@@ -1,5 +1,6 @@
 package com.ymmihw.resource.server.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -29,9 +30,13 @@ public class OAuth2ResourceServerConfigRemoteTokenService extends ResourceServer
     return new JwtTokenStore(accessTokenConverter());
   }
 
+  @Autowired
+  private CustomAccessTokenConverter customAccessTokenConverter;
+
   @Bean
   public JwtAccessTokenConverter accessTokenConverter() {
     JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
+    converter.setAccessTokenConverter(customAccessTokenConverter);
     converter.setSigningKey("123");
     return converter;
   }
