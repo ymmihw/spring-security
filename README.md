@@ -65,3 +65,10 @@ spring-security-method-security | [Introduction to Spring Method Security](https
 Module | Article
 --|--
 spring-security-acl-intro | [A Custom Spring SecurityConfigurer](http://www.baeldung.com/spring-security-custom-configurer)
+
+---
+### Spring Security CAS
+
+Module | Article
+--|--
+spring-security-cas-sso | [CAS SSO With Spring Security](https://www.baeldung.com/spring-security-cas-sso)
