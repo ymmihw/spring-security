@@ -58,3 +58,10 @@ Module | Article
 --|--
 custom-security-configurer | [A Custom Spring SecurityConfigurer](http://www.baeldung.com/spring-security-custom-configurer)
 spring-security-method-security | [Introduction to Spring Method Security](https://www.baeldung.com/spring-security-method-security)
+
+---
+### Spring Security ACL
+
+Module | Article
+--|--
+spring-security-acl-intro | [A Custom Spring SecurityConfigurer](http://www.baeldung.com/spring-security-custom-configurer)
