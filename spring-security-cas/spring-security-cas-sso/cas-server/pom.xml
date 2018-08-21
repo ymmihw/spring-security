@@ -1,23 +1,12 @@
-<?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd ">
  <modelVersion>4.0.0</modelVersion>
- <parent>
-  <groupId>com.ymmihw.spring.security.cas</groupId>
-  <artifactId>spring-security-cas-sso</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
- </parent>
  <groupId>com.ymmihw.spring.security.cas</groupId>
  <artifactId>cas-server</artifactId>
  <version>0.0.1-SNAPSHOT</version>
- <name>cas-server</name>
  <packaging>war</packaging>
- <url>http://maven.apache.org</url>
- <properties>
-  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  <cas.version>5.3.2</cas.version>
-  <app.server>-tomcat</app.server>
- </properties>
+
  <dependencies>
   <dependency>
    <groupId>org.apereo.cas</groupId>
@@ -35,11 +24,40 @@
    <version>${cas.version}</version>
   </dependency>
  </dependencies>
+
  <build>
   <plugins>
    <plugin>
+    <groupId>com.rimerosolutions.maven.plugins</groupId>
+    <artifactId>wrapper-maven-plugin</artifactId>
+    <version>${wrapper-maven-plugin.version}</version>
+    <configuration>
+     <verifyDownload>true</verifyDownload>
+     <checksumAlgorithm>MD5</checksumAlgorithm>
+    </configuration>
+   </plugin>
+   <plugin>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+    <version>${springboot.version}</version>
+    <configuration>
+     <mainClass>${mainClassName}</mainClass>
+     <addResources>true</addResources>
+     <executable>${isExecutable}</executable>
+     <layout>WAR</layout>
+    </configuration>
+    <executions>
+     <execution>
+      <goals>
+       <goal>repackage</goal>
+      </goals>
+     </execution>
+    </executions>
+   </plugin>
+   <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-war-plugin</artifactId>
+    <version>${maven-war-plugin.version}</version>
     <configuration>
      <warName>cas</warName>
      <failOnMissingWebXml>false</failOnMissingWebXml>
@@ -56,8 +74,42 @@
      </overlays>
     </configuration>
    </plugin>
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <version>${maven-compiler-plugin.version}</version>
+   </plugin>
   </plugins>
+  <finalName>cas</finalName>
  </build>
+
+ <repositories>
+  <repository>
+   <id>sonatype-releases</id>
+   <url>http://oss.sonatype.org/content/repositories/releases/</url>
+   <snapshots>
+    <enabled>false</enabled>
+   </snapshots>
+   <releases>
+    <enabled>true</enabled>
+   </releases>
+  </repository>
+  <repository>
+   <id>sonatype-snapshots</id>
+   <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+   <snapshots>
+    <enabled>true</enabled>
+   </snapshots>
+   <releases>
+    <enabled>false</enabled>
+   </releases>
+  </repository>
+  <repository>
+   <id>shibboleth-releases</id>
+   <url>https://build.shibboleth.net/nexus/content/repositories/releases</url>
+  </repository>
+ </repositories>
+
  <profiles>
   <profile>
    <activation>
@@ -160,4 +212,25 @@
    </build>
   </profile>
  </profiles>
+
+ <properties>
+  <cas.version>5.3.2</cas.version>
+  <springboot.version>1.5.14.RELEASE</springboot.version>
+  <!-- app.server could be -jetty, -undertow, -tomcat, or blank if you plan to provide appserver -->
+  <app.server>-tomcat</app.server>
+
+  <mainClassName>org.springframework.boot.loader.WarLauncher</mainClassName>
+  <isExecutable>false</isExecutable>
+  <manifestFileToUse>${project.build.directory}/war/work/org.apereo.cas/cas-server-webapp${app.server}/META-INF/MANIFEST.MF</manifestFileToUse>
+
+  <maven.compiler.source>1.8</maven.compiler.source>
+  <maven.compiler.target>1.8</maven.compiler.target>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <wrapper-maven-plugin.version>0.0.4</wrapper-maven-plugin.version>
+  <maven-war-plugin.version>2.6</maven-war-plugin.version>
+  <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
+  <echo-maven-plugin.version>0.3.0</echo-maven-plugin.version>
+  <pgpverify-maven-plugin.version>1.1.0</pgpverify-maven-plugin.version>
+ </properties>
+
 </project>
