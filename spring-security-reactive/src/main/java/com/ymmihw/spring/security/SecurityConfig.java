@@ -16,10 +16,14 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 public class SecurityConfig {
 
   @Bean
-  public SecurityWebFilterChain securitygWebFilterChain(ServerHttpSecurity http) {
-    return http.authorizeExchange().pathMatchers("/admin").hasAuthority("ROLE_ADMIN").anyExchange()
-        .authenticated().and().formLogin().and().build();
-  }
+  public SecurityWebFilterChain securitygWebFilterChain(ServerHttpSecurity http) { // @formatter:off
+    return http.authorizeExchange().pathMatchers("/admin")
+                 .hasAuthority("ROLE_ADMIN").anyExchange().authenticated()
+               .and()
+               .formLogin()
+               .and()
+               .build();
+  }// @formatter:on
 
   @Bean
   public MapReactiveUserDetailsService userDetailsService() {
