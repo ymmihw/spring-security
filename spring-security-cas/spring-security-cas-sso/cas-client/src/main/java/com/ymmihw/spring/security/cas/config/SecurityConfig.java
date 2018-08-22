@@ -39,15 +39,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   }
 
   @Override
-  protected void configure(HttpSecurity http) throws Exception {
-    http.authorizeRequests().regexMatchers("/secured.*", "/login").authenticated().and()
-        .authorizeRequests().regexMatchers("/").permitAll().and().httpBasic()
-        .authenticationEntryPoint(authenticationEntryPoint).and().logout()
-        .logoutSuccessUrl("/logout").and()
-        .addFilterBefore(singleSignOutFilter, CasAuthenticationFilter.class)
-        .addFilterBefore(logoutFilter, LogoutFilter.class);
-
-  }
+  protected void configure(HttpSecurity http) throws Exception { // @formatter:off
+    http.authorizeRequests().regexMatchers("/secured.*", "/login").authenticated()
+        .and().authorizeRequests().regexMatchers("/").permitAll()
+        .and().httpBasic().authenticationEntryPoint(authenticationEntryPoint)
+        .and().logout().logoutSuccessUrl("/logout")
+        .and().addFilterBefore(singleSignOutFilter, CasAuthenticationFilter.class)
+              .addFilterBefore(logoutFilter, LogoutFilter.class);
+  } // @formatter:on
 
   @Override
   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
