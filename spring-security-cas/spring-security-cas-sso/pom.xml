@@ -20,5 +20,6 @@
  </dependencies>
  <modules>
   <module>cas-server</module>
+  <module>cas-client</module>
  </modules>
 </project>
