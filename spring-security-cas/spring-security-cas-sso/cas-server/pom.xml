@@ -23,6 +23,11 @@
    <artifactId>cas-server-support-jdbc-drivers</artifactId>
    <version>${cas.version}</version>
   </dependency>
+  <dependency>
+   <groupId>com.h2database</groupId>
+   <artifactId>h2</artifactId>
+   <version>1.4.197</version>
+  </dependency>
  </dependencies>
 
  <build>
