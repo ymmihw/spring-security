@@ -3,8 +3,8 @@
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
  <modelVersion>4.0.0</modelVersion>
  <parent>
-  <groupId>com.ymmihw.spring</groupId>
-  <artifactId>spring-security</artifactId>
+  <groupId>com.ymmihw.spring.security</groupId>
+  <artifactId>spring-security-core</artifactId>
   <version>0.0.1-SNAPSHOT</version>
  </parent>
  <groupId>com.ymmihw.spring</groupId>

@@ -3,7 +3,6 @@
 Module | Article
 --|--
 new-password-storage | [New Password Storage In Spring Security 5](http://www.baeldung.com/spring-security-5-password-storage)
-custom-authentication-provider | [Spring Security Authentication Provider](http://www.baeldung.com/spring-security-authentication-provider)
 spring-security-reactive | [Spring Security 5 for Reactive Applications](https://www.baeldung.com/spring-security-5-reactive)
 ---
 
@@ -74,3 +73,10 @@ spring-security-acl-intro | [A Custom Spring SecurityConfigurer](http://www.bael
 Module | Article
 --|--
 spring-security-cas-sso | [CAS SSO With Spring Security](https://www.baeldung.com/spring-security-cas-sso)
+
+---
+### Spring Security Core
+
+Module | Article
+--|--
+custom-authentication-provider | [Spring Security Authentication Provider](http://www.baeldung.com/spring-security-authentication-provider)
