@@ -80,3 +80,4 @@ spring-security-cas-sso | [CAS SSO With Spring Security](https://www.baeldung.co
 Module | Article
 --|--
 custom-authentication-provider | [Spring Security Authentication Provider](http://www.baeldung.com/spring-security-authentication-provider)
+multiple-auth-providers | [Multiple Authentication Providers in Spring Security](http://www.baeldung.com/spring-security-multiple-auth-providers)
