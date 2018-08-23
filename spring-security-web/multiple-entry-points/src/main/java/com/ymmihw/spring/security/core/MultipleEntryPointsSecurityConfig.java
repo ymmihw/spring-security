@@ -59,19 +59,16 @@ public class MultipleEntryPointsSecurityConfig {
   public static class App2ConfigurationAdapter extends WebSecurityConfigurerAdapter {
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
-
-      http.antMatcher("/user/**").authorizeRequests().anyRequest().hasRole("USER").and().formLogin()
-          .loginProcessingUrl("/user/login").failureUrl("/userLogin?error=loginError")
-          .defaultSuccessUrl("/user/myUserPage").and().logout().logoutUrl("/user/logout")
-          .logoutSuccessUrl("/multipleHttpLinks").deleteCookies("JSESSIONID").and()
-          .exceptionHandling()
-          .defaultAuthenticationEntryPointFor(loginUrlauthenticationEntryPointWithWarning(),
-              new AntPathRequestMatcher("/user/private/**"))
-          .defaultAuthenticationEntryPointFor(loginUrlauthenticationEntryPoint(),
-              new AntPathRequestMatcher("/user/general/**"))
-          .accessDeniedPage("/403").and().csrf().disable();
-    }
+    protected void configure(HttpSecurity http) throws Exception { // @formatter:off
+      http.antMatcher("/user/**").authorizeRequests().anyRequest().hasRole("USER")
+          .and().formLogin().loginProcessingUrl("/user/login").failureUrl("/userLogin?error=loginError").defaultSuccessUrl("/user/myUserPage")
+          .and().logout().logoutUrl("/user/logout").logoutSuccessUrl("/multipleHttpLinks").deleteCookies("JSESSIONID")
+          .and().exceptionHandling()
+                .defaultAuthenticationEntryPointFor(loginUrlauthenticationEntryPointWithWarning(), new AntPathRequestMatcher("/user/private/**"))
+                .defaultAuthenticationEntryPointFor(loginUrlauthenticationEntryPoint(), new AntPathRequestMatcher("/user/general/**"))
+                .accessDeniedPage("/403")
+          .and().csrf().disable();
+    } // @formatter:on
 
     @Bean
     public AuthenticationEntryPoint loginUrlauthenticationEntryPoint() {
