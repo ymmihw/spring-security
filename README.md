@@ -32,6 +32,7 @@ spring-security-web-digest-auth | [Spring Security Digest Authentication](http:/
 spring-security-web-x509-auth | [X.509 Authentication in Spring Security](http://www.baeldung.com/x-509-authentication-in-spring-security)
 spring-security-web-csrf | [A Guide to CSRF Protection in Spring Security](http://www.baeldung.com/spring-security-csrf)
 spring-security-web-custom-authentication-failure-handler | [Spring Security Custom AuthenticationFailureHandler](https://www.baeldung.com/spring-security-custom-authentication-failure-handler)
+multiple-entry-points | [Multiple Entry Points in Spring Security](http://www.baeldung.com/spring-security-multiple-entry-points)
 ---
 
 ### Spring Security OAuth2
