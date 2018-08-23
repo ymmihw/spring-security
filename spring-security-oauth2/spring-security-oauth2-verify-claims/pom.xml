@@ -10,6 +10,7 @@
  <groupId>com.ymmihw.spring.security.auth2</groupId>
  <artifactId>spring-security-oauth2-verify-claims</artifactId>
  <version>0.0.3-SNAPSHOT</version>
+ <packaging>pom</packaging>
  <name>spring-security-oauth2-verify-claims</name>
  <url>http://maven.apache.org</url>
  <properties>
@@ -17,4 +18,7 @@
  </properties>
  <dependencies>
  </dependencies>
+ <modules>
+  <module>resource-server</module>
+ </modules>
 </project>
