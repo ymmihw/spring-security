@@ -5,6 +5,8 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
@@ -16,7 +18,8 @@ public class SecSecurityConfig extends WebSecurityConfigurerAdapter {
 
   @Override
   protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
-    auth.inMemoryAuthentication().withUser("1").password("{noop}1").roles("USER");
+    PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+    auth.inMemoryAuthentication().withUser("1").password(encoder.encode("1")).roles("USER");
   }
 
   @Override
