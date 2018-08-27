@@ -11,11 +11,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 @EnableWebSecurity
 public class SecSecurityConfig extends WebSecurityConfigurerAdapter {
-
-  public SecSecurityConfig() {
-    super();
-  }
-
   @Override
   protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
     PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
