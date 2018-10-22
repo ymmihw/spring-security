@@ -47,6 +47,8 @@ spring-security-oauth2-jwt-store | [Using JWT with Spring Security OAuth](http:/
 spring-security-oauth2-verify-claims | [New in Spring Security OAuth2 – Verify Claims](http://www.baeldung.com/spring-security-oauth-2-verify-claims)
 spring-security-oauth2-authorization-code-flow | [Front-End App with Spring Security OAuth – Authorization Code Flow](https://www.baeldung.com/spring-security-oauth-authorization-code-flow)
 spring-security-oauth2-oauth2loginconfigurer | [Spring Security 5 – OAuth2 Login](https://www.baeldung.com/spring-security-5-oauth2-login)
+spring-security-oauth2-api-testing | [Testing an OAuth Secured API with Spring MVC](http://www.baeldung.com/oauth-api-testing-with-spring-mvc)
+
 ---
 
 ### Spring Security Crypto
