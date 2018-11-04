@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Cookie } from 'ng2-cookies';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/map';
+import { map, catchError  } from 'rxjs/operators';
 
 export class Foo {
   constructor(
@@ -27,8 +26,8 @@ export class AppService {
     let headers = new Headers(h);
     let options = new RequestOptions({ headers: headers });
     console.log(params.toString());
-    this._http.post('/oauth/token', params.toString(), options)
-      .map(res => res.json())
+    this._http.post('/oauth/token', params.toString(), options).pipe(
+      map(res => res.json()))
       .subscribe(
         data => this.saveToken(data),
         () => alert('Invalid Credentials')
@@ -46,9 +45,9 @@ export class AppService {
   getResource(resourceUrl): Observable<Foo> {
     let headers = new Headers({ 'Content-type': 'application/x-www-form-urlencoded; charset=utf-8', 'Authorization': 'Bearer ' + Cookie.get('access_token') });
     let options = new RequestOptions({ headers: headers });
-    return this._http.get(resourceUrl, options)
-      .map((res: Response) => res.json())
-      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+    return this._http.get(resourceUrl, options).pipe(
+      map((res: Response) => res.json()),
+      catchError((error: any) => Observable.throw(error.json().error || 'Server error')));
   }
 
   checkCredentials() {

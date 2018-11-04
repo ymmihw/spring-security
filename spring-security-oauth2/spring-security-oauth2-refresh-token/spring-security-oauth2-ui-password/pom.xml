@@ -57,6 +57,12 @@
     <directory>target/resources</directory>
     <targetPath>static</targetPath>
    </resource>
+   <resource>
+    <directory>src/main/javaResources</directory>
+    <includes>
+     <include>application.yml</include>
+    </includes>
+   </resource>
   </resources>
  </build>
  <dependencies>
