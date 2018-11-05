@@ -20,9 +20,9 @@
     <version>1.6</version>
 
     <configuration>
-     <nodeVersion>v8.11.3</nodeVersion>
-     <npmVersion>6.1.0</npmVersion>
-     <workingDirectory>src/main/resources</workingDirectory>
+     <nodeVersion>v10.13.0</nodeVersion>
+     <npmVersion>6.4.1</npmVersion>
+     <workingDirectory>src/main/web</workingDirectory>
     </configuration>
 
     <executions>
@@ -51,19 +51,27 @@
      </execution>
     </executions>
    </plugin>
+   <plugin>
+    <artifactId>maven-resources-plugin</artifactId>
+    <executions>
+     <execution>
+      <id>copy-resources</id>
+      <phase>validate</phase>
+      <goals>
+       <goal>copy-resources</goal>
+      </goals>
+      <configuration>
+       <outputDirectory>target/classes/resources/</outputDirectory>
+       <resources>
+        <resource>
+         <directory>src/main/web/dist/crmapp/</directory>
+        </resource>
+       </resources>
+      </configuration>
+     </execution>
+    </executions>
+   </plugin>
   </plugins>
-  <resources>
-   <resource>
-    <directory>target/resources</directory>
-    <targetPath>static</targetPath>
-   </resource>
-   <resource>
-    <directory>src/main/javaResources</directory>
-    <includes>
-     <include>application.yml</include>
-    </includes>
-   </resource>
-  </resources>
  </build>
  <dependencies>
   <dependency>
