@@ -3,7 +3,6 @@
 Module | Article
 --|--
 new-password-storage | [New Password Storage In Spring Security 5](http://www.baeldung.com/spring-security-5-password-storage)
-spring-security-reactive | [Spring Security 5 for Reactive Applications](https://www.baeldung.com/spring-security-5-reactive)
 ---
 
 ### Authentication Series
