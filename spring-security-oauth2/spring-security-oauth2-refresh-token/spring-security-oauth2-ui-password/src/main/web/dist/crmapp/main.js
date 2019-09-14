@@ -417,7 +417,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Git\spring-security\spring-security-oauth2\spring-security-oauth2-refresh-token\spring-security-oauth2-ui-password\src\main\web\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\git\spring-security\spring-security-oauth2\spring-security-oauth2-refresh-token\spring-security-oauth2-ui-password\src\main\web\src\main.ts */"./src/main.ts");
 
 
 /***/ })
