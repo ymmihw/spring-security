@@ -4,7 +4,6 @@
  <artifactId>spring-security-oauth2-ui-password</artifactId>
 
  <name>spring-security-oauth2-ui-password</name>
- <packaging>war</packaging>
 
  <parent>
   <groupId>com.ymmihw.spring.security.auth2</groupId>
