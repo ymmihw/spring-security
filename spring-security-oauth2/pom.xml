@@ -4,7 +4,6 @@
 
  <groupId>com.ymmihw</groupId>
  <artifactId>spring-security-oauth2</artifactId>
- <version>0.0.1-SNAPSHOT</version>
  <packaging>pom</packaging>
 
  <name>spring-security-oauth2</name>
