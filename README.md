@@ -32,6 +32,8 @@ spring-security-web-x509-auth | [X.509 Authentication in Spring Security](http:/
 spring-security-web-csrf | [A Guide to CSRF Protection in Spring Security](http://www.baeldung.com/spring-security-csrf)
 spring-security-web-custom-authentication-failure-handler | [Spring Security Custom AuthenticationFailureHandler](https://www.baeldung.com/spring-security-custom-authentication-failure-handler)
 multiple-entry-points | [Multiple Entry Points in Spring Security](http://www.baeldung.com/spring-security-multiple-entry-points)
+spring-security-web-jwt | [Spring Security with JWT](https://dev.to/keysh/spring-security-with-jwt-3j76)
+
 ---
 
 ### Spring Security OAuth2
