@@ -12,10 +12,10 @@ import com.ymmihw.spring.security.oauth2.web.dto.Foo;
 @RequestMapping("/foos")
 public class FooController {
 
-    @PreAuthorize("#oauth2.hasScope('read')")
-    @GetMapping("/{id}")
-    public Foo retrieveFoo(@PathVariable("id") Long id) {
-        return new Foo(id, RandomStringUtils.randomAlphabetic(6));
-    }
+  @PreAuthorize("#oauth2.hasScope('read')")
+  @GetMapping("/{id}")
+  public Foo retrieveFoo(@PathVariable("id") Long id) {
+    return new Foo(id, RandomStringUtils.randomAlphabetic(6));
+  }
 
 }
