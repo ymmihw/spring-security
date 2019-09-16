@@ -9,7 +9,6 @@
  </parent>
  <groupId>com.ymmihw.spring.security.web</groupId>
  <artifactId>spring-security-web-digest-auth</artifactId>
- <version>0.0.1-SNAPSHOT</version>
  <name>spring-security-web-digest-auth</name>
  <url>http://maven.apache.org</url>
  <properties>
