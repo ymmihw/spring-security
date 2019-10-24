@@ -23,7 +23,7 @@ public class OAuth2AuthorizationServerConfigInMemory extends AuthorizationServer
     PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
     clients.inMemory().withClient("fooClientId").secret(encoder.encode("secret"))
         .authorizedGrantTypes("authorization_code").scopes("foo", "read", "write")
-        .redirectUris("http://localhost:8089/");
+        .redirectUris("http://localhost:8089/", "http://172.16.10.141:8082/").autoApprove(true);
   }
 
 }
