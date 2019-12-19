@@ -9,7 +9,6 @@
  </parent>
  <groupId>com.ymmihw.spring.security</groupId>
  <artifactId>spring-security-core</artifactId>
- <version>0.0.1-SNAPSHOT</version>
  <packaging>pom</packaging>
  <name>spring-security-core</name>
  <url>http://maven.apache.org</url>
@@ -18,4 +17,9 @@
  </properties>
  <dependencies>
  </dependencies>
+ <modules>
+  <module>custom-authentication-provider</module>
+  <module>multiple-auth-providers</module>
+  <module>run-as-auth</module>
+ </modules>
 </project>

@@ -55,9 +55,8 @@ public class TokenRevocationLiveTest {
     params.put("response_type", "code");
     params.put("client_id", clientId);
     params.put("scope", "read,write");
-    final Response response = RestAssured.given().auth().preemptive().basic(clientId, "secret")
-        .and().with().params(params).when()
-        .post("http://localhost:8081/spring-security-oauth-server/oauth/authorize");
+    RestAssured.given().auth().preemptive().basic(clientId, "secret").and().with().params(params)
+        .when().post("http://localhost:8081/spring-security-oauth-server/oauth/authorize");
   }
 
   @Test
@@ -66,7 +65,7 @@ public class TokenRevocationLiveTest {
     authorizeClient("fooClientId");
     String accessToken1 = response.jsonPath().getString("access_token");
 
-    final Response response0 = RestAssured.given().header("Authorization", "Bearer " + accessToken1)
+    RestAssured.given().header("Authorization", "Bearer " + accessToken1)
         .get("http://localhost:8081/spring-security-oauth-server/tokens");
 
     final Response response1 = RestAssured.given().header("Authorization", "Bearer " + accessToken1)

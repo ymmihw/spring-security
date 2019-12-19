@@ -9,7 +9,6 @@
  </parent>
  <groupId>com.ymmihw.spring</groupId>
  <artifactId>custom-security-configurer</artifactId>
- <version>0.0.1-SNAPSHOT</version>
  <name>custom-security-configurer</name>
  <url>http://maven.apache.org</url>
  <properties>

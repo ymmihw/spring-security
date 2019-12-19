@@ -18,6 +18,7 @@ public class GithubAuthoritiesExtractor implements AuthoritiesExtractor {
   private List<GrantedAuthority> GITHUB_SUBSCRIBED_AUTHORITIES =
       AuthorityUtils.commaSeparatedStringToAuthorityList("GITHUB_USER,GITHUB_USER_SUBSCRIBED");
 
+  @SuppressWarnings("unchecked")
   @Override
   public List<GrantedAuthority> extractAuthorities(Map<String, Object> map) {
     if (Objects.nonNull(map.get("plan"))) {

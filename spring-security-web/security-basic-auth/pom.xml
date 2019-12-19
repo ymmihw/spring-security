@@ -9,7 +9,6 @@
  </parent>
  <groupId>com.ymmihw.spring</groupId>
  <artifactId>security-basic-auth</artifactId>
- <version>0.0.1-SNAPSHOT</version>
  <name>security-basic-auth</name>
  <url>http://maven.apache.org</url>
  <properties>

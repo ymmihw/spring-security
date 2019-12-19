@@ -18,6 +18,13 @@
  <dependencies>
  </dependencies>
  <modules>
+  <module>extra-login-fields</module>
+  <module>multiple-entry-points</module>
+  <module>security-basic-auth</module>
+  <module>spring-security-web-csrf</module>
+  <module>spring-security-web-custom-authentication-failure-handler</module>
+  <module>spring-security-web-digest-auth</module>
   <module>spring-security-web-jwt</module>
+  <module>spring-security-web-x509-auth</module>
  </modules>
 </project>

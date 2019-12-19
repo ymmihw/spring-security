@@ -10,7 +10,7 @@
 
  <groupId>com.ymmihw.spring.security.oauth2</groupId>
  <artifactId>spring-security-oauth2-refresh-token</artifactId>
- <version>0.0.1-SNAPSHOT</version>
+ <version>0.0.4-SNAPSHOT</version>
  <packaging>pom</packaging>
 
 
@@ -45,5 +45,8 @@
  <dependencies>
  </dependencies>
  <modules>
+  <module>authorization-server</module>
+  <module>resource-server</module>
+  <module>spring-security-oauth2-ui-password</module>
  </modules>
 </project>

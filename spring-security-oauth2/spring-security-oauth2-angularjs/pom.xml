@@ -9,7 +9,6 @@
  </parent>
  <groupId>com.ymmihw.spring.security.auth2</groupId>
  <artifactId>spring-security-oauth2-angularjs</artifactId>
- <version>0.0.1-SNAPSHOT</version>
  <packaging>pom</packaging>
  <name>spring-security-oauth2-angularjs</name>
  <url>http://maven.apache.org</url>
@@ -17,7 +16,6 @@
   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
  </properties>
  <dependencies>
-
  </dependencies>
  <modules>
   <module>spring-security-oauth2-ui-implicit</module>

@@ -9,7 +9,6 @@
  </parent>
  <groupId>com.ymmihw.spring.security</groupId>
  <artifactId>spring-security-config</artifactId>
- <version>0.0.1-SNAPSHOT</version>
  <packaging>pom</packaging>
  <name>spring-security-config</name>
  <url>http://maven.apache.org</url>
@@ -18,4 +17,8 @@
  </properties>
  <dependencies>
  </dependencies>
+ <modules>
+  <module>custom-security-configurer</module>
+  <module>spring-security-method-security</module>
+ </modules>
 </project>

@@ -9,7 +9,6 @@
  </parent>
  <groupId>com.ymmihw.spring.security.auth2</groupId>
  <artifactId>spring-security-oauth2-api-testing</artifactId>
- <version>0.0.1-SNAPSHOT</version>
  <packaging>pom</packaging>
  <name>spring-security-oauth2-api-testing</name>
  <url>http://maven.apache.org</url>

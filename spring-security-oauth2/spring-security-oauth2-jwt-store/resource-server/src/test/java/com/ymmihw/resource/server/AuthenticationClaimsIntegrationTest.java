@@ -31,6 +31,7 @@ public class AuthenticationClaimsIntegrationTest {
     assertTrue(auth.isAuthenticated());
     System.out.println(auth.getDetails());
 
+    @SuppressWarnings("unchecked")
     Map<String, Object> details = (Map<String, Object>) auth.getDetails();
     assertTrue(details.containsKey("organization"));
     System.out.println(details.get("organization"));

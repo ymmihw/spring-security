@@ -9,7 +9,6 @@
  </parent>
  <groupId>com.ymmihw.spring.security</groupId>
  <artifactId>authentication-series</artifactId>
- <version>0.0.1-SNAPSHOT</version>
  <packaging>pom</packaging>
  <name>authentication-series</name>
  <url>http://maven.apache.org</url>
@@ -18,4 +17,10 @@
  </properties>
  <dependencies>
  </dependencies>
+ <modules>
+  <module>channel-security-https</module>
+  <module>persistent-remember-me</module>
+  <module>redirect-different-after-login</module>
+  <module>remember-me</module>
+ </modules>
 </project>

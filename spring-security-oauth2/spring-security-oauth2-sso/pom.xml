@@ -9,7 +9,6 @@
  </parent>
  <groupId>com.ymmihw.spring.security.oauth2</groupId>
  <artifactId>spring-security-oauth2-sso</artifactId>
- <version>0.0.1-SNAPSHOT</version>
  <packaging>pom</packaging>
  <name>spring-security-oauth2-sso</name>
  <url>http://maven.apache.org</url>
@@ -20,7 +19,6 @@
  </dependencies>
  <modules>
   <module>auth-server</module>
-  <module>ui1</module>
   <module>ui</module>
  </modules>
 </project>

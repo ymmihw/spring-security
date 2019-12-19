@@ -8,6 +8,7 @@
   <version>0.0.1-SNAPSHOT</version>
  </parent>
  <artifactId>resource-server</artifactId>
+ <version>0.0.5-SNAPSHOT</version>
  <name>resource-server</name>
  <packaging>war</packaging>
  <url>http://maven.apache.org</url>

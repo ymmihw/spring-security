@@ -9,7 +9,6 @@
  </parent>
  <groupId>com.ymmihw.spring.security.oauth2.sso</groupId>
  <artifactId>auth-server</artifactId>
- <version>0.0.1-SNAPSHOT</version>
  <name>auth-server</name>
  <url>http://maven.apache.org</url>
  <properties>

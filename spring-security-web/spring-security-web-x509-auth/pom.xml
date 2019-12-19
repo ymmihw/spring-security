@@ -9,7 +9,6 @@
  </parent>
  <groupId>com.ymmihw.spring.security.web</groupId>
  <artifactId>spring-security-web-x509-auth</artifactId>
- <version>0.0.1-SNAPSHOT</version>
  <name>spring-security-web-x509-auth</name>
  <packaging>pom</packaging>
  <url>http://maven.apache.org</url>
@@ -30,4 +29,8 @@
    <artifactId>spring-boot-starter-thymeleaf</artifactId>
   </dependency>
  </dependencies>
+ <modules>
+  <module>spring-security-x509-basic-auth</module>
+  <module>spring-security-x509-client-auth</module>
+ </modules>
 </project>

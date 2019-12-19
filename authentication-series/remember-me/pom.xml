@@ -7,9 +7,7 @@
   <artifactId>authentication-series</artifactId>
   <version>0.0.1-SNAPSHOT</version>
  </parent>
- <groupId>com.ymmihw.spring.security</groupId>
  <artifactId>remember-me</artifactId>
- <version>0.0.1-SNAPSHOT</version>
  <name>remember-me</name>
  <url>http://maven.apache.org</url>
  <properties>

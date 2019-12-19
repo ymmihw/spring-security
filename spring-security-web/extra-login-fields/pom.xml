@@ -7,9 +7,7 @@
   <artifactId>spring-security-web</artifactId>
   <version>0.0.1-SNAPSHOT</version>
  </parent>
- <groupId>com.ymmihw.spring.security</groupId>
  <artifactId>extra-login-fields</artifactId>
- <version>0.0.1-SNAPSHOT</version>
  <name>extra-login-fields</name>
  <url>http://maven.apache.org</url>
  <properties>

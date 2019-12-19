@@ -37,4 +37,15 @@
    <scope>test</scope>
   </dependency>
  </dependencies>
+ <modules>
+  <module>authentication-series</module>
+  <module>spring-security-acl</module>
+  <module>spring-security-cas</module>
+  <module>spring-security-config</module>
+  <module>spring-security-core</module>
+  <module>spring-security-crypto</module>
+  <module>spring-security-ldap</module>
+  <module>spring-security-oauth2</module>
+  <module>spring-security-web</module>
+ </modules>
 </project>

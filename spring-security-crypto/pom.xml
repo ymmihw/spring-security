@@ -9,7 +9,6 @@
  </parent>
  <groupId>com.ymmihw.spring.security</groupId>
  <artifactId>spring-security-crypto</artifactId>
- <version>0.0.1-SNAPSHOT</version>
  <packaging>pom</packaging>
  <name>spring-security-crypto</name>
  <url>http://maven.apache.org</url>
@@ -18,4 +17,7 @@
  </properties>
  <dependencies>
  </dependencies>
+ <modules>
+  <module>new-password-storage</module>
+ </modules>
 </project>

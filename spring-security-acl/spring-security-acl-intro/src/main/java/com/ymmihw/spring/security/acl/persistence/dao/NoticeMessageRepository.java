@@ -20,6 +20,7 @@ public interface NoticeMessageRepository extends JpaRepository<NoticeMessage, Lo
   @PostAuthorize("hasPermission(returnObject, 'READ')")
   NoticeMessage getOne(Long id);
 
+  @SuppressWarnings("unchecked")
   @Override
   @PreAuthorize("hasPermission(#noticeMessage, 'WRITE')")
   NoticeMessage save(@Param("noticeMessage") NoticeMessage noticeMessage);

@@ -28,6 +28,7 @@ public class LoginController {
   @Autowired
   private ClientRegistrationRepository clientRegistrationRepository;
 
+  @SuppressWarnings("unchecked")
   @GetMapping("/oauth_login")
   public String getLoginPage(Model model) {
     Iterable<ClientRegistration> clientRegistrations = null;
@@ -65,6 +66,7 @@ public class LoginController {
 
       HttpEntity<String> entity = new HttpEntity<String>("", headers);
 
+      @SuppressWarnings("rawtypes")
       ResponseEntity<Map> response =
           restTemplate.exchange(userInfoEndpointUri, HttpMethod.GET, entity, Map.class);
       Map<?, ?> userAttributes = response.getBody();

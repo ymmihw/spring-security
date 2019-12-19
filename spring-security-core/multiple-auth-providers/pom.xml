@@ -9,7 +9,6 @@
  </parent>
  <groupId>com.ymmihw.spring.security.core</groupId>
  <artifactId>multiple-auth-providers</artifactId>
- <version>0.0.1-SNAPSHOT</version>
  <name>multiple-auth-providers</name>
  <url>http://maven.apache.org</url>
  <properties>

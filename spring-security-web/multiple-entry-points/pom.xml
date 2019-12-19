@@ -9,7 +9,6 @@
  </parent>
  <groupId>com.ymmihw.spring.security.core</groupId>
  <artifactId>multiple-entry-points</artifactId>
- <version>0.0.1-SNAPSHOT</version>
  <name>multiple-entry-points</name>
  <url>http://maven.apache.org</url>
  <properties>

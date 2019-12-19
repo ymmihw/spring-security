@@ -9,7 +9,6 @@
  </parent>
  <groupId>com.ymmihw.spring.security</groupId>
  <artifactId>spring-security-cas</artifactId>
- <version>0.0.1-SNAPSHOT</version>
  <packaging>pom</packaging>
  <name>spring-security-cas</name>
  <url>http://maven.apache.org</url>

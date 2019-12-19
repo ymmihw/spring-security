@@ -9,7 +9,6 @@
  </parent>
  <groupId>com.ymmihw.spring.security</groupId>
  <artifactId>spring-security-acl</artifactId>
- <version>0.0.1-SNAPSHOT</version>
  <packaging>pom</packaging>
  <name>spring-security-acl</name>
  <url>http://maven.apache.org</url>
@@ -18,4 +17,7 @@
  </properties>
  <dependencies>
  </dependencies>
+ <modules>
+  <module>spring-security-acl-intro</module>
+ </modules>
 </project>
