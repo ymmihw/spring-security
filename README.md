@@ -88,3 +88,4 @@ Module | Article
 custom-authentication-provider | [Spring Security Authentication Provider](http://www.baeldung.com/spring-security-authentication-provider)
 multiple-auth-providers | [Multiple Authentication Providers in Spring Security](http://www.baeldung.com/spring-security-multiple-auth-providers)
 run-as-auth | [Spring Security – Run-As Authentication](http://www.baeldung.com/spring-security-run-as-auth)
+AuthenticationManagerResolver | [Guide to the AuthenticationManagerResolver in Spring Security](https://www.baeldung.com/spring-security-authenticationmanagerresolver)
