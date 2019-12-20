@@ -27,11 +27,11 @@ public class CustomWebSecurityConfig {
         .addFilterAfter(authenticationWebFilter(), SecurityWebFiltersOrder.REACTOR_CONTEXT).build();
   }
 
-  public AuthenticationWebFilter authenticationWebFilter() {
+  private AuthenticationWebFilter authenticationWebFilter() {
     return new AuthenticationWebFilter(resolver());
   }
 
-  public ReactiveAuthenticationManagerResolver<ServerHttpRequest> resolver() {
+  private ReactiveAuthenticationManagerResolver<ServerHttpRequest> resolver() {
     return request -> {
       if (request.getPath().subPath(0).value().startsWith("/employee")) {
         return Mono.just(employeesAuthenticationManager());
@@ -40,7 +40,7 @@ public class CustomWebSecurityConfig {
     };
   }
 
-  public ReactiveAuthenticationManager customersAuthenticationManager() {
+  private ReactiveAuthenticationManager customersAuthenticationManager() {
     return authentication -> customer(authentication)
         .switchIfEmpty(
             Mono.error(new UsernameNotFoundException(authentication.getPrincipal().toString())))
@@ -49,7 +49,7 @@ public class CustomWebSecurityConfig {
             Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER"))));
   }
 
-  public ReactiveAuthenticationManager employeesAuthenticationManager() {
+  private ReactiveAuthenticationManager employeesAuthenticationManager() {
     return authentication -> employee(authentication)
         .switchIfEmpty(
             Mono.error(new UsernameNotFoundException(authentication.getPrincipal().toString())))
@@ -58,13 +58,13 @@ public class CustomWebSecurityConfig {
             Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER"))));
   }
 
-  public Mono<String> customer(Authentication authentication) {
+  private Mono<String> customer(Authentication authentication) {
     return Mono.justOrEmpty(authentication.getPrincipal().toString().startsWith("customer")
         ? authentication.getPrincipal().toString()
         : null);
   }
 
-  public Mono<String> employee(Authentication authentication) {
+  private Mono<String> employee(Authentication authentication) {
     return Mono.justOrEmpty(authentication.getPrincipal().toString().startsWith("employee")
         ? authentication.getPrincipal().toString()
         : null);

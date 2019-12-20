@@ -18,12 +18,19 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 
 @Configuration
 public class CustomWebSecurityConfigurer extends WebSecurityConfigurerAdapter {
-
-  public AuthenticationConverter authenticationConverter() {
-    return new BasicAuthenticationConverter();
+  @Override
+  protected void configure(HttpSecurity http) {
+    http.addFilterBefore(authenticationFilter(), BasicAuthenticationFilter.class);
   }
 
-  public AuthenticationManagerResolver<HttpServletRequest> resolver() {
+  private AuthenticationFilter authenticationFilter() {
+    AuthenticationFilter filter = new AuthenticationFilter(resolver(), authenticationConverter());
+    filter.setSuccessHandler((request, response, auth) -> {
+    });
+    return filter;
+  }
+
+  private AuthenticationManagerResolver<HttpServletRequest> resolver() {
     return request -> {
       if (request.getPathInfo().startsWith("/employee")) {
         return employeesAuthenticationManager();
@@ -32,7 +39,11 @@ public class CustomWebSecurityConfigurer extends WebSecurityConfigurerAdapter {
     };
   }
 
-  public AuthenticationManager customersAuthenticationManager() {
+  private AuthenticationConverter authenticationConverter() {
+    return new BasicAuthenticationConverter();
+  }
+
+  private AuthenticationManager customersAuthenticationManager() {
     return authentication -> {
       if (isCustomer(authentication)) {
         return new UsernamePasswordAuthenticationToken(authentication.getPrincipal(),
@@ -51,13 +62,6 @@ public class CustomWebSecurityConfigurer extends WebSecurityConfigurerAdapter {
     return (authentication.getPrincipal().toString().startsWith("employee"));
   }
 
-  private AuthenticationFilter authenticationFilter() {
-    AuthenticationFilter filter = new AuthenticationFilter(resolver(), authenticationConverter());
-    filter.setSuccessHandler((request, response, auth) -> {
-    });
-    return filter;
-  }
-
   private AuthenticationManager employeesAuthenticationManager() {
     return authentication -> {
       if (isEmployee(authentication)) {
@@ -67,11 +71,6 @@ public class CustomWebSecurityConfigurer extends WebSecurityConfigurerAdapter {
       }
       throw new UsernameNotFoundException(authentication.getPrincipal().toString());
     };
-  }
-
-  @Override
-  protected void configure(HttpSecurity http) {
-    http.addFilterBefore(authenticationFilter(), BasicAuthenticationFilter.class);
   }
 
 }
