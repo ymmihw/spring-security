@@ -58,14 +58,14 @@ public class SpringACLIntegrationTest extends AbstractJUnit4SpringContextTests {
   @Transactional
   @Rollback
   public void givenUserManager_whenFind1stMessageByIdAndUpdateItsContent_thenOK() {
-    NoticeMessage firstMessage = repo.getOne(FIRST_MESSAGE_ID);
+    NoticeMessage firstMessage = repo.getById(FIRST_MESSAGE_ID);
     assertNotNull(firstMessage);
     assertEquals(FIRST_MESSAGE_ID, firstMessage.getId());
 
     firstMessage.setContent(EDITTED_CONTENT);
     repo.save(firstMessage);
 
-    NoticeMessage editedFirstMessage = repo.getOne(FIRST_MESSAGE_ID);
+    NoticeMessage editedFirstMessage = repo.getById(FIRST_MESSAGE_ID);
     assertNotNull(editedFirstMessage);
     assertEquals(FIRST_MESSAGE_ID, editedFirstMessage.getId());
     assertEquals(EDITTED_CONTENT, editedFirstMessage.getContent());
@@ -74,7 +74,7 @@ public class SpringACLIntegrationTest extends AbstractJUnit4SpringContextTests {
   @Test
   @WithMockUser(username = "hr")
   public void givenUsernameHr_whenFindMessageById2_thenOK() {
-    NoticeMessage secondMessage = repo.getOne(SECOND_MESSAGE_ID);
+    NoticeMessage secondMessage = repo.getById(SECOND_MESSAGE_ID);
     assertNotNull(secondMessage);
     assertEquals(SECOND_MESSAGE_ID, secondMessage.getId());
   }
@@ -110,7 +110,7 @@ public class SpringACLIntegrationTest extends AbstractJUnit4SpringContextTests {
   @Transactional
   @Rollback
   public void givenRoleEditor_whenFind1stMessageByIdAndUpdateContent_thenFail() {
-    NoticeMessage firstMessage = repo.getOne(FIRST_MESSAGE_ID);
+    NoticeMessage firstMessage = repo.getById(FIRST_MESSAGE_ID);
     assertNotNull(firstMessage);
     assertEquals(FIRST_MESSAGE_ID, firstMessage.getId());
     firstMessage.setContent(EDITTED_CONTENT);

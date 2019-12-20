@@ -1,3 +1,4 @@
 .project
 .settings
 .classpath
+/spring-security-oauth2/spring-security-oauth2-refresh-token/spring-security-oauth2-ui-password/src/main/web/dist
