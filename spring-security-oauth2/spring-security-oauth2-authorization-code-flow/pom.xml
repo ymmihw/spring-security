@@ -18,7 +18,7 @@
  <dependencies>
  </dependencies>
  <modules>
-  <module>authorization-code-flow-front-end</module>
+  <!-- <module>authorization-code-flow-front-end</module> -->
   <module>authorization-server</module>
   <module>resource-server</module>
  </modules>

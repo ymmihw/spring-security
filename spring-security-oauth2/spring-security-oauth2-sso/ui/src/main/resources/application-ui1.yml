@@ -19,3 +19,7 @@ security:
 spring:
   thymeleaf:
     cache: false
+spring.security.oauth2.client.registration.ymmihw:
+  client-id: SampleClientId
+  client-secret: secret
+  
