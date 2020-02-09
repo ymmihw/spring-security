@@ -19,14 +19,20 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
 
   @Override
   public void configure(final AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
-    oauthServer.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated()");
+    oauthServer.tokenKeyAccess("permitAll()")
+               .checkTokenAccess("isAuthenticated()");
   }
 
   @Override
   public void configure(final ClientDetailsServiceConfigurer clients) throws Exception {
     PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-    clients.inMemory().withClient("SampleClientId").secret(encoder.encode("secret"))
-        .authorizedGrantTypes("authorization_code").scopes("user_info").autoApprove(true);
+    clients.inMemory()
+           .withClient("SampleClientId")
+           .secret(encoder.encode("secret"))
+           .authorizedGrantTypes("authorization_code")
+           .scopes("user_info")
+           .autoApprove(true)
+           .redirectUris("http://localhost:8082/ui/login", "http://localhost:8083/ui/login");
   }
 
   @Override

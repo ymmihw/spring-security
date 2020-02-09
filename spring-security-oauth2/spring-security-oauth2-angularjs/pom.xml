@@ -18,8 +18,8 @@
  <dependencies>
  </dependencies>
  <modules>
-  <module>spring-security-oauth2-ui-implicit</module>
-  <module>spring-security-oauth2-ui-password</module>
+  <!-- <module>spring-security-oauth2-ui-implicit</module> -->
+  <!-- <module>spring-security-oauth2-ui-password</module> -->
   <module>authorization-server</module>
   <module>resource-server</module>
  </modules>
