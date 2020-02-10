@@ -25,14 +25,16 @@ public class UiWebConfig implements WebMvcConfigurer {
 
   @Override
   public void addViewControllers(final ViewControllerRegistry registry) {
-    registry.addViewController("/").setViewName("forward:/index");
+    registry.addViewController("/")
+            .setViewName("forward:/index");
     registry.addViewController("/index");
     registry.addViewController("/securedPage");
   }
 
   @Override
   public void addResourceHandlers(final ResourceHandlerRegistry registry) {
-    registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+    registry.addResourceHandler("/resources/**")
+            .addResourceLocations("/resources/");
   }
 
 }
