@@ -32,7 +32,8 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
            .authorizedGrantTypes("authorization_code")
            .scopes("user_info")
            .autoApprove(true)
-           .redirectUris("http://localhost:8082/ui/login", "http://localhost:8083/ui/login");
+           .redirectUris("http://localhost:8082/ui/login/oauth2/code/",
+               "http://localhost:8083/ui/login/oauth2/code/");
   }
 
   @Override
