@@ -50,6 +50,7 @@ spring-security-oauth2-authorization-code-flow | [Front-End App with Spring Secu
 spring-security-oauth2-oauth2loginconfigurer | [Spring Security 5 – OAuth2 Login](https://www.baeldung.com/spring-security-5-oauth2-login)
 spring-security-oauth2-api-testing | [Testing an OAuth Secured API with Spring MVC](http://www.baeldung.com/oauth-api-testing-with-spring-mvc)
 spring-security-oauth2-jws-jwk | [JWS + JWK in a Spring Security OAuth2 Application](https://www.baeldung.com/spring-security-oauth2-jws-jwk)
+spring-security-oauth2-custom-requests | [Customizing Authorization and Token Requests with Spring Security 5.1 Client](https://www.baeldung.com/spring-security-custom-oauth-requests)
 
 ---
 
