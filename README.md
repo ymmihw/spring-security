@@ -41,8 +41,6 @@ Module | Article
 --|--
 spring-security-oauth2-sso | [Simple Single Sign On with Spring Security OAuth2](http://www.baeldung.com/sso-spring-security-oauth2)
 spring-security-oauth2-principal-authorities-extractor | [Extracting Principal and Authorities using Spring Security OAuth](https://www.baeldung.com/spring-security-oauth-principal-authorities-extractor)
-spring-security-oauth2-angularjs | [Spring REST API + OAuth2 + AngularJS](http://www.baeldung.com/rest-api-spring-oauth2-angularjs)
-spring-security-oauth2-angularjs | [Angular 4 Upgrade for Spring Security OAuth](http://www.baeldung.com/angular-4-upgrade-for-spring-security-oauth/)
 spring-security-oauth2-revoke-tokens | [Spring Security OAuth2 – Simple Token Revocation](http://www.baeldung.com/spring-security-oauth-revoke-tokens)
 spring-security-oauth2-jwt-store | [Using JWT with Spring Security OAuth](http://www.baeldung.com/spring-security-oauth-jwt)
 spring-security-oauth2-verify-claims | [New in Spring Security OAuth2 – Verify Claims](http://www.baeldung.com/spring-security-oauth-2-verify-claims)
