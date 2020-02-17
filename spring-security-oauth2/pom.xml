@@ -32,7 +32,6 @@
   <module>spring-security-oauth2-principal-authorities-extractor</module>
   <module>spring-security-oauth2-revoke-tokens</module>
   <module>spring-security-oauth2-sso</module>
-  <module>spring-security-oauth2-verify-claims</module>
   <module>spring-security-oauth2-custom-requests</module>
  </modules>
 </project>
