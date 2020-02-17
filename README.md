@@ -42,7 +42,6 @@ Module | Article
 spring-security-oauth2-sso | [Simple Single Sign On with Spring Security OAuth2](http://www.baeldung.com/sso-spring-security-oauth2)
 spring-security-oauth2-principal-authorities-extractor | [Extracting Principal and Authorities using Spring Security OAuth](https://www.baeldung.com/spring-security-oauth-principal-authorities-extractor)
 spring-security-oauth2-oauth2loginconfigurer | [Spring Security 5 – OAuth2 Login](https://www.baeldung.com/spring-security-5-oauth2-login)
-spring-security-oauth2-api-testing | [Testing an OAuth Secured API with Spring MVC](http://www.baeldung.com/oauth-api-testing-with-spring-mvc)
 spring-security-oauth2-custom-requests | [Customizing Authorization and Token Requests with Spring Security 5.1 Client](https://www.baeldung.com/spring-security-custom-oauth-requests)
 
 ---
