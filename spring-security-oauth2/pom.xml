@@ -27,7 +27,6 @@
  </parent>
  <modules>
   <module>spring-security-oauth2-api-testing</module>
-  <module>spring-security-oauth2-jws-jwk</module>
   <module>spring-security-oauth2-oauth2loginconfigurer</module>
   <module>spring-security-oauth2-principal-authorities-extractor</module>
   <module>spring-security-oauth2-revoke-tokens</module>
