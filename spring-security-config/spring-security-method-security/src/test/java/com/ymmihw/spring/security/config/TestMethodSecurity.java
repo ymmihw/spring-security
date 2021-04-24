@@ -1,12 +1,13 @@
 package com.ymmihw.spring.security.config;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.ArrayList;
 import java.util.List;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.access.AccessDeniedException;
@@ -14,10 +15,9 @@ import org.springframework.security.authentication.AuthenticationCredentialsNotF
 import org.springframework.security.test.context.support.WithAnonymousUser;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
 import com.ymmihw.spring.security.config.service.UserRoleService;
 
-@RunWith(SpringRunner.class)
+@SpringBootTest
 @ContextConfiguration
 public class TestMethodSecurity {
 
@@ -30,8 +30,11 @@ public class TestMethodSecurity {
 
   }
 
-  @Test(expected = AuthenticationCredentialsNotFoundException.class)
+  @Test
   public void givenNoSecurity_whenCallGetUsername_thenReturnException() {
+    assertThrows(AuthenticationCredentialsNotFoundException.class,
+        () -> userRoleService.getUsername());
+
     String userName = userRoleService.getUsername();
     assertEquals("john", userName);
   }
@@ -50,16 +53,16 @@ public class TestMethodSecurity {
     assertEquals(true, isValid);
   }
 
-  @Test(expected = AccessDeniedException.class)
+  @Test
   @WithMockUser(username = "john", roles = {"ADMIN"})
   public void givenRoleAdmin_whenCallGetUsername_thenReturnAccessDenied() {
-    userRoleService.getUsername();
+    assertThrows(AccessDeniedException.class, () -> userRoleService.getUsername());
   }
 
-  @Test(expected = AccessDeniedException.class)
+  @Test
   @WithMockUser(username = "john", roles = {"USER"})
   public void givenRoleUser_whenCallGetUsername2_thenReturnAccessDenied() {
-    userRoleService.getUsername2();
+    assertThrows(AccessDeniedException.class, () -> userRoleService.getUsername2());
   }
 
   @Test
@@ -90,10 +93,10 @@ public class TestMethodSecurity {
     assertEquals("ROLE_ADMIN,ROLE_USER,ROLE_VIEWER", roles);
   }
 
-  @Test(expected = AccessDeniedException.class)
+  @Test
   @WithMockUser(username = "john", roles = {"ADMIN", "USER", "VIEWER"})
   public void givenUserJane_whenCallGetMyRolesWithJane_thenAccessDenied() {
-    userRoleService.getMyRoles("jane");
+    assertThrows(AccessDeniedException.class, () -> userRoleService.getMyRoles("jane"));
   }
 
   @Test
@@ -103,16 +106,16 @@ public class TestMethodSecurity {
     assertEquals("ROLE_ADMIN,ROLE_USER,ROLE_VIEWER", roles);
   }
 
-  @Test(expected = AccessDeniedException.class)
+  @Test
   @WithMockUser(username = "john", roles = {"ADMIN", "USER", "VIEWER"})
   public void givenUserJane_whenCallGetMyRoles2WithJane_thenAccessDenied() {
-    userRoleService.getMyRoles2("jane");
+    assertThrows(AccessDeniedException.class, () -> userRoleService.getMyRoles2("jane"));
   }
 
-  @Test(expected = AccessDeniedException.class)
+  @Test
   @WithAnonymousUser
   public void givenAnomynousUser_whenCallGetUsername_thenAccessDenied() {
-    userRoleService.getUsername();
+    assertThrows(AccessDeniedException.class, () -> userRoleService.getUsername());
   }
 
   @Test
@@ -165,10 +168,10 @@ public class TestMethodSecurity {
     assertEquals("john", userName);
   }
 
-  @Test(expected = AccessDeniedException.class)
+  @Test
   @WithMockUser(username = "john")
   public void givenDefaultRole_whenCallGetUsername4_thenAccessDenied() {
-    userRoleService.getUsername4();
+    assertThrows(AccessDeniedException.class, () -> userRoleService.getUsername4());
   }
 
 }
