@@ -1,17 +1,16 @@
 package com.ymmihw.spring.security.config;
 
-import static org.junit.Assert.assertEquals;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
 import com.ymmihw.spring.security.config.service.UserRoleService;
 
-@RunWith(SpringRunner.class)
+@SpringBootTest
 @ContextConfiguration
 @WithMockUser(username = "john", roles = {"VIEWER"})
 public class TestWithMockUserAtClassLevel {

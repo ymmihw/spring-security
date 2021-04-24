@@ -1,18 +1,18 @@
 package com.ymmihw.spring.security.config;
 
-import static org.junit.Assert.assertEquals;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
 import com.ymmihw.spring.security.config.service.SystemService;
 
-@RunWith(SpringRunner.class)
+@SpringBootTest
 @ContextConfiguration
 public class TestClassLevelSecurity {
 
@@ -32,11 +32,10 @@ public class TestClassLevelSecurity {
     assertEquals("2017", systemYear);
   }
 
-  @Test(expected = AccessDeniedException.class)
+  @Test
   @WithMockUser(username = "john", roles = {"VIEWER"})
   public void givenRoleViewer_whenCallGetSystemYear_returnAccessDenied() {
-    String systemYear = systemService.getSystemYear();
-    assertEquals("2017", systemYear);
+    assertThrows(AccessDeniedException.class, () -> systemService.getSystemYear());
   }
 
   @Test

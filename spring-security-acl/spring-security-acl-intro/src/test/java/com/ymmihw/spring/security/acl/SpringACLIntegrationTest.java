@@ -1,12 +1,13 @@
 package com.ymmihw.spring.security.acl;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.util.List;
 import javax.transaction.Transactional;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.access.AccessDeniedException;
@@ -16,7 +17,6 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
 import org.springframework.test.context.support.DirtiesContextTestExecutionListener;
 import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
@@ -24,7 +24,7 @@ import org.springframework.test.context.web.ServletTestExecutionListener;
 import com.ymmihw.spring.security.acl.persistence.dao.NoticeMessageRepository;
 import com.ymmihw.spring.security.acl.persistence.entity.NoticeMessage;
 
-@RunWith(SpringJUnit4ClassRunner.class)
+@SpringBootTest
 @ContextConfiguration
 @TestExecutionListeners(listeners = {ServletTestExecutionListener.class,
     DependencyInjectionTestExecutionListener.class, DirtiesContextTestExecutionListener.class,
@@ -79,13 +79,14 @@ public class SpringACLIntegrationTest extends AbstractJUnit4SpringContextTests {
     assertEquals(SECOND_MESSAGE_ID, secondMessage.getId());
   }
 
-  @Test(expected = AccessDeniedException.class)
+  @Test
   @WithMockUser(username = "hr")
   public void givenUsernameHr_whenUpdateMessageWithId2_thenFail() {
     NoticeMessage secondMessage = new NoticeMessage();
     secondMessage.setId(SECOND_MESSAGE_ID);
     secondMessage.setContent(EDITTED_CONTENT);
-    repo.save(secondMessage);
+
+    assertThrows(AccessDeniedException.class, () -> repo.save(secondMessage));
   }
 
   @Test
@@ -103,9 +104,11 @@ public class SpringACLIntegrationTest extends AbstractJUnit4SpringContextTests {
     thirdMessage.setId(THIRD_MESSAGE_ID);
     thirdMessage.setContent(EDITTED_CONTENT);
     repo.save(thirdMessage);
+
+
   }
 
-  @Test(expected = AccessDeniedException.class)
+  @Test
   @WithMockUser(roles = {"EDITOR"})
   @Transactional
   @Rollback
@@ -114,6 +117,7 @@ public class SpringACLIntegrationTest extends AbstractJUnit4SpringContextTests {
     assertNotNull(firstMessage);
     assertEquals(FIRST_MESSAGE_ID, firstMessage.getId());
     firstMessage.setContent(EDITTED_CONTENT);
-    repo.save(firstMessage);
+
+    assertThrows(AccessDeniedException.class, () -> repo.save(firstMessage));
   }
 }

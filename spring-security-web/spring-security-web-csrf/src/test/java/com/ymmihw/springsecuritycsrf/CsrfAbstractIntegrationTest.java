@@ -3,10 +3,9 @@ package com.ymmihw.springsecuritycsrf;
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
 import javax.servlet.Filter;
-import org.junit.Before;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.RequestPostProcessor;
@@ -16,7 +15,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ymmihw.springsecuritycsrf.dto.Foo;
 
-@RunWith(SpringJUnit4ClassRunner.class)
+@SpringBootTest
 @WebAppConfiguration
 public abstract class CsrfAbstractIntegrationTest {
 
@@ -28,7 +27,7 @@ public abstract class CsrfAbstractIntegrationTest {
 
   MockMvc mvc;
 
-  @Before
+  @BeforeEach
   public void setup() {
     mvc = MockMvcBuilders.webAppContextSetup(context).addFilters(springSecurityFilterChain).build();
   }
