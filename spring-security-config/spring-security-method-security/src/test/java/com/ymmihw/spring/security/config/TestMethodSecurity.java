@@ -34,9 +34,6 @@ public class TestMethodSecurity {
   public void givenNoSecurity_whenCallGetUsername_thenReturnException() {
     assertThrows(AuthenticationCredentialsNotFoundException.class,
         () -> userRoleService.getUsername());
-
-    String userName = userRoleService.getUsername();
-    assertEquals("john", userName);
   }
 
   @Test
