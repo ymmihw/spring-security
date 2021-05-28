@@ -1,10 +1,7 @@
 package com.ymmihw.spring.security.acl;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import java.util.List;
-import javax.transaction.Transactional;
+import com.ymmihw.spring.security.acl.persistence.dao.NoticeMessageRepository;
+import com.ymmihw.spring.security.acl.persistence.entity.NoticeMessage;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,24 +9,15 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.test.context.support.WithMockUser;
-import org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener;
 import org.springframework.test.annotation.Rollback;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.TestExecutionListeners;
-import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
-import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
-import org.springframework.test.context.support.DirtiesContextTestExecutionListener;
-import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
-import org.springframework.test.context.web.ServletTestExecutionListener;
-import com.ymmihw.spring.security.acl.persistence.dao.NoticeMessageRepository;
-import com.ymmihw.spring.security.acl.persistence.entity.NoticeMessage;
+
+import javax.transaction.Transactional;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-@ContextConfiguration
-@TestExecutionListeners(listeners = {ServletTestExecutionListener.class,
-    DependencyInjectionTestExecutionListener.class, DirtiesContextTestExecutionListener.class,
-    TransactionalTestExecutionListener.class, WithSecurityContextTestExecutionListener.class})
-public class SpringACLIntegrationTest extends AbstractJUnit4SpringContextTests {
+public class SpringACLIntegrationTest {
 
   private static Long FIRST_MESSAGE_ID = 1L;
   private static Long SECOND_MESSAGE_ID = 2L;
@@ -38,11 +26,9 @@ public class SpringACLIntegrationTest extends AbstractJUnit4SpringContextTests {
 
   @Configuration
   @ComponentScan("com.ymmihw.spring.security.acl")
-  public static class SpringConfig {
-  }
+  public static class SpringConfig {}
 
-  @Autowired
-  private NoticeMessageRepository repo;
+  @Autowired private NoticeMessageRepository repo;
 
   @Test
   @WithMockUser(username = "manager")
@@ -104,8 +90,6 @@ public class SpringACLIntegrationTest extends AbstractJUnit4SpringContextTests {
     thirdMessage.setId(THIRD_MESSAGE_ID);
     thirdMessage.setContent(EDITTED_CONTENT);
     repo.save(thirdMessage);
-
-
   }
 
   @Test
