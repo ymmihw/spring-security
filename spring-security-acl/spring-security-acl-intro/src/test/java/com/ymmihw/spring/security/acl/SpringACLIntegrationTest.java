@@ -17,6 +17,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
+@Transactional
 public class SpringACLIntegrationTest {
 
   private static Long FIRST_MESSAGE_ID = 1L;
@@ -41,7 +42,6 @@ public class SpringACLIntegrationTest {
 
   @Test
   @WithMockUser(username = "manager")
-  @Transactional
   @Rollback
   public void givenUserManager_whenFind1stMessageByIdAndUpdateItsContent_thenOK() {
     NoticeMessage firstMessage = repo.getById(FIRST_MESSAGE_ID);
@@ -94,7 +94,6 @@ public class SpringACLIntegrationTest {
 
   @Test
   @WithMockUser(roles = {"EDITOR"})
-  @Transactional
   @Rollback
   public void givenRoleEditor_whenFind1stMessageByIdAndUpdateContent_thenFail() {
     NoticeMessage firstMessage = repo.getById(FIRST_MESSAGE_ID);
